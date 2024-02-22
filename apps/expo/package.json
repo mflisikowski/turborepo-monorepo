@@ -5,7 +5,7 @@
   "main": "expo-router/entry",
   "scripts": {
     "clean": "git clean -xdf .expo .turbo node_modules",
-    "dev": "expo start -- --port=3001",
+    "dev": "expo start",
     "dev:android": "expo start --android -- --port=3001",
     "dev:ios": "expo start --ios -- --port=3002",
     "android": "expo run:android",

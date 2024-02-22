@@ -6,13 +6,13 @@ const defineConfig = (): ExpoConfig => ({
   scheme: 'expo',
   version: '0.1.0',
   orientation: 'portrait',
-  // icon: './assets/icon.svg', // TODO: how to use a vector image here?
+  icon: './assets/icon.png', // TODO: how to use a vector image here?
   userInterfaceStyle: 'automatic',
-  // splash: {
-  //   image: "./assets/icon.svg", // TODO: how to use a vector image here?
-  //   resizeMode: "contain",
-  //   backgroundColor: "#1F104A",
-  // },
+  splash: {
+    image: "./assets/icon.png", // TODO: how to use a vector image here?
+    resizeMode: "contain",
+    backgroundColor: "#1F104A",
+  },
   updates: {
     fallbackToCacheTimeout: 0,
   },
@@ -24,7 +24,7 @@ const defineConfig = (): ExpoConfig => ({
   android: {
     package: 'your.bundle.identifier',
     adaptiveIcon: {
-      // foregroundImage: './assets/icon.svg', // TODO: how to use a vector image here?
+      foregroundImage: './assets/icon.png', // TODO: ÷how to use a vector image here?
       backgroundColor: '#1F104A',
     },
   },
