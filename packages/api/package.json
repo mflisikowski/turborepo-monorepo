@@ -14,9 +14,9 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@turborepo/eslint-config": "workspace:^0.2.0",
-    "@turborepo/prettier-config": "workspace:^0.1.0",
-    "@turborepo/tsconfig": "workspace:^0.1.0",
+    "@turborepo/eslint-config": "workspace:*",
+    "@turborepo/prettier-config": "workspace:*",
+    "@turborepo/tsconfig": "workspace:*",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3"
