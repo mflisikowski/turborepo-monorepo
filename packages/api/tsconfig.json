@@ -1,8 +1,14 @@
 {
   "extends": "@turborepo/tsconfig/base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/openapi": ["./src/openapi/api.ts"],
+      "@/axios": ["./src/axios.ts"]
+    }
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

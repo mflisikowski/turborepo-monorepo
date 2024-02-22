@@ -1,0 +1,391 @@
+openapi: 3.0.0
+info:
+  title: 'Open API'
+  description: 'API documentation'
+  version: 1.0.0
+paths:
+  /api/doc.json:
+    get:
+      responses:
+        default:
+          description: ''
+  /api/health:
+    get:
+      tags:
+        - 'Health Check'
+      operationId: get_health
+      responses:
+        '200':
+          description: 'System status'
+  '/api/stats/{idStat}':
+    get:
+      tags:
+        - Stats
+      operationId: get_get_stat
+      parameters:
+        - name: idStat
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: \d+
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatsDto'
+      responses:
+        default:
+          description: ''
+    delete:
+      tags:
+        - Stats
+      operationId: delete_del_stats
+      parameters:
+        - name: idStat
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatsDto'
+      responses:
+        default:
+          description: ''
+  /api/stats/count:
+    get:
+      tags:
+        - Stats
+      operationId: get_get_stats_count
+      responses:
+        '200':
+          description: 'Stats count'
+  /api/stats/aggregate:
+    get:
+      tags:
+        - Stats
+      operationId: get_get_stats_aggregate
+      responses:
+        default:
+          description: ''
+  /api/stats:
+    get:
+      tags:
+        - Stats
+      operationId: get_get_stats
+      responses:
+        '200':
+          description: 'Stats list'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatsDto'
+    put:
+      tags:
+        - Stats
+      operationId: put_edit_stat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatsDto'
+      responses:
+        default:
+          description: ''
+    post:
+      responses:
+        default:
+          description: ''
+  '/api/orders/{idZam}':
+    get:
+      tags:
+        - Orders
+      operationId: get_get_order
+      parameters:
+        - name: idZam
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: \d+
+      responses:
+        default:
+          description: ''
+    delete:
+      tags:
+        - Orders
+      operationId: delete_del_order
+      parameters:
+        - name: idZam
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        default:
+          description: ''
+  /api/orders/count:
+    get:
+      tags:
+        - Orders
+      operationId: get_get_orders_count
+      responses:
+        '200':
+          description: 'Orders count'
+  /api/orders:
+    get:
+      tags:
+        - Orders
+      operationId: get_get_orders
+      responses:
+        '200':
+          description: 'Orders list'
+    put:
+      responses:
+        default:
+          description: ''
+    post:
+      responses:
+        default:
+          description: ''
+  /api/login_check:
+    post:
+      tags:
+        - User
+      operationId: post_api_login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - username
+                - password
+              properties:
+                username:
+                  type: string
+                  example: test@test.com
+                password:
+                  type: string
+                  example: aaaaaa
+              type: object
+      responses:
+        '200':
+          description: 'JWT Token'
+        '401':
+          description: Unauthorized
+  /api/register:
+    post:
+      tags:
+        - User
+      operationId: post_register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterDto'
+      responses:
+        '201':
+          description: 'Confirmation message'
+components:
+  schemas:
+    StatsDto:
+      properties:
+        key:
+          description: key
+          type: integer
+          example: 1694908800000
+        keyAsString:
+          description: key_as_string
+          type: string
+          example: '2023-09-17T00:00:00.000Z'
+        docCount:
+          description: doc_count
+          type: integer
+          example: 271818
+        pp:
+          description: pp
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: pp
+        search:
+          description: search
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: search
+        alert:
+          description: alert
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: alert
+        www:
+          description: www
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: www
+        informator:
+          description: informator
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: informator
+        facebook:
+          description: facebook
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: facebook
+        kb:
+          description: kb
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: kb
+        sms:
+          description: sms
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: sms
+        banner:
+          description: banner
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: banner
+        instagram:
+          description: instagram
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: instagram
+        soldout:
+          description: soldout
+          type: array
+          items:
+            properties:
+              doc_count:
+                description: 'liczba dokumentów'
+                type: integer
+                example: 22528
+            type: object
+          example: soldout
+      type: object
+    RegisterDto:
+      required:
+        - email
+        - password
+        - name
+        - areaCode
+        - phone
+        - area
+        - events
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+          maxLength: 32
+          minLength: 6
+        name:
+          type: string
+          maxLength: 32
+          minLength: 2
+        areaCode:
+          type: integer
+          maxLength: 2
+          minLength: 2
+        phone:
+          type: string
+          maxLength: 9
+          minLength: 9
+        area:
+          type: string
+        events:
+          type: string
+        address:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        fvName:
+          type: string
+          nullable: true
+        fvAddress:
+          type: string
+          nullable: true
+        fvZip:
+          type: string
+          nullable: true
+        fvLocation:
+          type: string
+          nullable: true
+        fvNIP:
+          type: string
+          maxLength: 10
+          minLength: 10
+          nullable: true
+        subscription:
+          type: integer
+          nullable: true
+      type: object

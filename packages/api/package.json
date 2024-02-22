@@ -8,10 +8,15 @@
   },
   "license": "MIT",
   "scripts": {
+    "generate": "openapi-generator-cli generate",
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.9.0",
+    "axios": "^1.6.7"
   },
   "devDependencies": {
     "@turborepo/eslint-config": "workspace:*",
