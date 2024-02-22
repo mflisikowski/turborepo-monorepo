@@ -1,6 +1,6 @@
 {
   "name": "@turborepo/eslint-config",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "files": [
@@ -25,8 +25,8 @@
     "eslint-plugin-react-hooks": "^4.6.0"
   },
   "devDependencies": {
-    "@turborepo/prettier-config": "workspace:^0.1.0",
-    "@turborepo/tsconfig": "workspace:^0.1.0",
+    "@turborepo/prettier-config": "workspace:*",
+    "@turborepo/tsconfig": "workspace:*",
     "@types/eslint": "^8.56.2",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
