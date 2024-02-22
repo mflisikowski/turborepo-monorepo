@@ -1,7 +1,7 @@
 {
   "name": "@turborepo/prettier-config",
+  "version": "0.0.0",
   "private": true,
-  "version": "0.1.0",
   "type": "module",
   "exports": {
     ".": "./index.js"
@@ -17,7 +17,7 @@
     "prettier-plugin-tailwindcss": "^0.5.11"
   },
   "devDependencies": {
-    "@turborepo/tsconfig": "workspace:^0.1.0",
+    "@turborepo/tsconfig": "workspace:*",
     "typescript": "^5.3.3"
   },
   "prettier": "@turborepo/prettier-config"
